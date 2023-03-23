@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../static/index.css">
+	</head>
+	<body>
+
+        <form class="grid" action="/result" method="POST">
+        {% if  name %}
+
+            <h3  class="let_space">{{action_completed}}</h3>
+            <center>
+                <p>{{pcomment}}</p>
+            </center>
+
+          {% endif %}
+            {% if not name %}
+            <div><label for="name">Choose a bot</label><center>
+                <input type="radio" id="1" name="bot" value="1">
+                <label for="1">Bot 1</label>
+                <input type="radio" id="2" name="bot" value="2">
+                <label for="2">Bot 2</label>
+                <input type="radio" id="3" name="bot" value="3">
+                <label for="3">Bot 3</label>
+            </center></div>
+
+            <label for="name">Enter subreddits:</label>
+          <input type="text" id="name" name="name">
+            <label for="name">Enter keywords/phrases:</label>
+          <input type="text" id="keyw" name="keyw">
+            <label for="name">Enter prompt for coment/post:</label>
+          <input type="text" id="prompt" name="prompt">
+            <label for="name">Enter max no of tokens for comment/post:</label>
+          <input type="text" id="lookno" name="lookno">
+            <div><center>
+            <label><input type="checkbox" name="option" value="1"> Upvote</label>
+            <label><input type="checkbox" name="option" value="2"> Comment</label>
+            <label><input type="checkbox" name="option" value="3"> Post</label>
+                </center></div>
+
+          <center><input class="file_submit" type="Submit" name="action" value="Run"></center>
+            {% endif %}
+        </form>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>
